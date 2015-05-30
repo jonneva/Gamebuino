@@ -44,6 +44,18 @@ copied to the main folder and displayed in a directory listing.
 	gamebuino.build.core=arduino
 	gamebuino.build.variant=standard
 
+NOTE: The new Arduino 1.6.4 IDE requires some additional settings, and a change in the booloader.file setting:
+
+	gamebuino.upload.tool=avrdude
+	gamebuino.bootloader.tool=avrdude
+	gamebuino.bootloader.low_fuses=0xff
+	
+	## this setting (bootloader.path) no longer works (by the way, you can use ## to make lines inactive)
+	## gamebuino.bootloader.path=gamebuino_boot 
+	## instead declare bootloader file like this:
+	
+	gamebuino.bootloader.file=gamebuino_boot/gamebuino_boot.hex
+
 4) Burn the bootloader into the Gamebuino:
 	- Restart the Arduino IDE
 	- Select Tools -> Board -> Gambuino
